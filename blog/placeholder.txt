@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/1.png" />
+  <title>Why UK Tradespeople Lose Jobs to Missed Calls | AlwaysOn Booking</title>
+  <meta name="description" content="Most UK tradespeople are losing £2,000–£5,000 a month to missed calls without realising it. Here's the maths and what to do about it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate-950: #0a0f1e;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --white: #ffffff;
+      --blue-600: #2563eb;
+      --blue-400: #60a5fa;
+      --emerald-500: #10b981;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--slate-950);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10, 15, 30, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo img { height: 32px; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: var(--slate-400);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 4rem 1.5rem 3rem;
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(37,99,235,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--slate-400);
+      margin-bottom: 1.5rem;
+    }
+    .breadcrumb a { color: var(--slate-400); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--white); }
+    .breadcrumb span { color: var(--slate-700); }
+    .article-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-400);
+      background: rgba(37,99,235,0.1);
+      border: 1px solid rgba(37,99,235,0.2);
+      padding: 0.3rem 0.875rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      color: var(--white);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--slate-400);
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .article-meta-author {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-meta-author img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* ARTICLE BODY */
+    .article-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .article-body p {
+      color: var(--slate-300);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 2rem 0 0.75rem;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-body li {
+      color: var(--slate-300);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+    .article-body strong { color: var(--white); font-weight: 700; }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: var(--slate-900);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-left: 4px solid var(--blue-600);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .callout p { margin-bottom: 0; }
+    .callout-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-400);
+      margin-bottom: 0.75rem;
+    }
+
+    /* STAT BOX */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-box {
+      background: var(--slate-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .stat-box .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-box .stat-number.red { color: #f87171; }
+    .stat-box .stat-label {
+      font-size: 0.8rem;
+      color: var(--slate-400);
+      line-height: 1.4;
+    }
+
+    /* CTA */
+    .article-cta {
+      background: linear-gradient(135deg, var(--slate-900) 0%, rgba(37,99,235,0.08) 100%);
+      border: 1px solid rgba(37,99,235,0.2);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .article-cta h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .article-cta p {
+      color: var(--slate-400);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--blue-600);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.875rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    footer p { color: var(--slate-400); font-size: 0.875rem; }
+    footer a { color: var(--slate-400); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/2.png" alt="AlwaysOn Booking" />
+      </a>
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/blog">Blog</a>
+        <a href="/#get-started" class="nav-cta">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="article-header">
+    <div class="breadcrumb">
+      <a href="/blog">Blog</a>
+      <span>›</span>
+      <span>Revenue Recovery</span>
+    </div>
+    <div class="article-tag">Revenue Recovery</div>
+    <h1>Why UK Tradespeople Lose Jobs to Missed Calls — And What It's Actually Costing You</h1>
+    <div class="article-meta">
+      <div class="article-meta-author">
+        <img src="/lee.jpg" alt="Lee" />
+        <span>Lee Chandler, AlwaysOn Booking</span>
+      </div>
+      <span>22 April 2026</span>
+      <span>5 min read</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>You're under a sink. Your phone buzzes, you can't answer. You tell yourself you'll call them back in ten minutes. By the time you do, they've already booked someone else.</p>
+
+    <p>This happens to UK tradespeople dozens of times a week — and most don't realise how much it's costing them until they sit down and do the maths.</p>
+
+    <h2>The Reality of a Missed Call</h2>
+
+    <p>When a customer calls a tradesperson and nobody answers, they don't wait. Research consistently shows that the vast majority of callers will simply ring the next business they find on Google. They're not loyal to you yet — they have a problem that needs fixing, and they need someone now.</p>
+
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-number red">85%</div>
+        <div class="stat-label">of callers won't leave a voicemail or try again</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number red">5–10</div>
+        <div class="stat-label">missed new-enquiry calls per week is typical for a busy sole trader</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number red">£2,000+</div>
+        <div class="stat-label">lost revenue per month at just 5 missed calls and £150 average job value</div>
+      </div>
+    </div>
+
+    <p>That last number is the one that tends to stop people in their tracks. Five missed calls a week sounds manageable. But multiply it out — five calls, let's say three of those were genuine new enquiries, average job value of £150 — and you're looking at roughly £450 a week in lost revenue. That's over £23,000 a year walking out the door.</p>
+
+    <h2>Why Tradespeople Miss So Many Calls</h2>
+
+    <p>It's not laziness. It's the nature of the job. As a tradesperson, you simply cannot answer the phone in most of the situations that matter:</p>
+
+    <ul>
+      <li>You're on-site and your hands are occupied</li>
+      <li>You're driving between jobs</li>
+      <li>You're in a customer's home and it would be unprofessional to answer</li>
+      <li>You're doing electrical or gas work where concentration is non-negotiable</li>
+      <li>You're on a roof, down a drain, or somewhere you literally can't stop</li>
+    </ul>
+
+    <p>The problem isn't that you're ignoring calls. The problem is that the phone rings at exactly the wrong moment, and by the time you're free, it's too late.</p>
+
+    <div class="callout">
+      <div class="callout-label">The key insight</div>
+      <p>Customers calling a tradesperson are often in some degree of distress — a boiler that's broken, an electrical fault, a leak. They need someone <strong>now</strong>. That urgency works against you if you can't answer, because it drives them straight to your competitor.</p>
+    </div>
+
+    <h2>Voicemail Doesn't Solve It</h2>
+
+    <p>The standard advice is to have a good voicemail message. And yes, a professional voicemail is better than nothing. But the data is clear: most people don't leave voicemails, especially for something they consider urgent. They hear the beep and hang up.</p>
+
+    <p>Even when someone does leave a voicemail, you're now in a callback game — you call them back, they're unavailable, you leave a message, they call you back while you're on a job. By the time you actually speak, there's a real chance they've already sorted it with someone else.</p>
+
+    <h2>Why AI Voice Answering Often Makes It Worse</h2>
+
+    <p>There's been a rise in AI-powered phone answering services promising to answer every call with a virtual receptionist. In theory it sounds great. In practice, for trades customers, it tends to backfire.</p>
+
+    <p>When someone calls about a potential gas leak or a flooding bathroom, being answered by a robot voice that introduces itself as an AI assistant creates immediate distrust. People hang up. The comment sections on these products are full of tradespeople reporting exactly this — customers putting the phone straight down when AI introduces itself.</p>
+
+    <p>The issue is context. A customer calling a tradesperson is often anxious. They want to feel like they've reached a real business that will take care of them. An AI voice in that moment fails the trust test.</p>
+
+    <h2>What Actually Works: Text-Back</h2>
+
+    <p>The approach that consistently performs better for trades businesses is an instant SMS text-back. When a call is missed, the customer receives a text within seconds that acknowledges the missed call, introduces the business, and gives them a way to book or continue the conversation.</p>
+
+    <p>This works for a few reasons:</p>
+
+    <ul>
+      <li><strong>It's immediate.</strong> The customer hasn't left yet — they're still looking at their phone.</li>
+      <li><strong>It feels human.</strong> A text from a business number reads as a real response, not a robot.</li>
+      <li><strong>It removes friction.</strong> A booking link lets them self-serve without needing to call again.</li>
+      <li><strong>It buys you time.</strong> Even if you can't book them instantly, you've held the conversation open.</li>
+    </ul>
+
+    <h2>Doing the Maths on Your Own Business</h2>
+
+    <p>The simplest way to understand what missed calls are costing you is to look at last week's call log on your phone. Count the missed calls from numbers you don't recognise. These are potential new enquiries.</p>
+
+    <p>Now multiply that number by your average job value, and by four for a monthly figure. That's a rough estimate of your monthly revenue leak.</p>
+
+    <p>For most sole traders running a busy operation, the number is uncomfortable. For a plumber missing five calls a week at a £200 average job value, it's over £4,000 a month. The question then becomes simple: what would it take to recover even one of those jobs per month?</p>
+
+    <div class="callout">
+      <div class="callout-label">The test that matters</div>
+      <p>AlwaysOn Booking costs £197 per month. If recovering <strong>one missed job per month</strong> covers that cost — and most trades jobs do — the service pays for itself immediately. Everything beyond that is pure recovered revenue.</p>
+    </div>
+
+    <h2>The Bottom Line</h2>
+
+    <p>Missed calls are not a minor inconvenience. For a busy tradesperson, they represent a significant and ongoing revenue leak that compounds silently in the background. The fix doesn't require you to be available 24/7, hire a receptionist, or change how you work on-site.</p>
+
+    <p>It requires an instant, human-feeling response at the moment the customer is most likely to go elsewhere. Text-back achieves that. Everything else is secondary.</p>
+
+    <div class="article-cta">
+      <h3>See how much you're losing</h3>
+      <p>Use our free missed revenue calculator to put a number on it — then see how AlwaysOn Booking can recover it.</p>
+      <a href="/#calculator" class="cta-btn">Calculate My Revenue Leak →</a>
+    </div>
+
+  </article>
+
+  <footer>
+    <p>© 2026 AlwaysOn Booking · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a> · <a href="tel:07578410050">07578 410050</a></p>
+  </footer>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/1.png" />
+  <title>Blog | AlwaysOn Booking</title>
+  <meta name="description" content="Insights for UK tradespeople on recovering lost revenue, handling missed calls, and growing your trades business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate-950: #0a0f1e;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --white: #ffffff;
+      --blue-600: #2563eb;
+      --blue-400: #60a5fa;
+      --emerald-500: #10b981;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--slate-950);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10, 15, 30, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo img { height: 32px; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: var(--slate-400);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue-600);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #1d4ed8; }
+
+    /* HERO */
+    .blog-hero {
+      padding: 5rem 1.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blog-hero-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-400);
+      background: rgba(37,99,235,0.1);
+      border: 1px solid rgba(37,99,235,0.2);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .blog-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .blog-hero p {
+      color: var(--slate-400);
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* POSTS GRID */
+    .posts-section {
+      padding: 3rem 1.5rem 6rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .post-card {
+      background: var(--slate-900);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--white);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(37,99,235,0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .post-card-banner {
+      background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-900) 100%);
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-card-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(37,99,235,0.08) 0%, transparent 60%);
+    }
+    .post-card-banner-text {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.07);
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+    .post-card-icon {
+      font-size: 2.5rem;
+      position: absolute;
+      z-index: 2;
+    }
+    .post-card-body { padding: 1.5rem; }
+    .post-card-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-400);
+      margin-bottom: 0.75rem;
+    }
+    .post-card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+    .post-card p {
+      font-size: 0.875rem;
+      color: var(--slate-400);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .post-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--slate-400);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1rem;
+    }
+    .post-card-read {
+      color: var(--blue-400);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    footer p { color: var(--slate-400); font-size: 0.875rem; }
+    footer a { color: var(--slate-400); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/2.png" alt="AlwaysOn Booking" />
+      </a>
+      <div class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/blog">Blog</a>
+        <a href="/#get-started" class="nav-cta">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-label">Insights for UK Trades</div>
+    <h1>Stop Losing Jobs.<br>Start Reading.</h1>
+    <p>Practical advice for electricians, plumbers, gas engineers and locksmiths on recovering missed revenue and running a tighter operation.</p>
+  </section>
+
+  <section class="posts-section">
+    <div class="posts-grid">
+
+      <a href="/blog/why-tradespeople-lose-jobs-to-missed-calls.html" class="post-card">
+        <div class="post-card-banner">
+          <div class="post-card-banner-text">MISSED CALLS</div>
+          <span class="post-card-icon">📵</span>
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-tag">Revenue Recovery</div>
+          <h2>Why UK Tradespeople Lose Jobs to Missed Calls — And What It's Actually Costing You</h2>
+          <p>Most trades businesses are haemorrhaging revenue without realising it. Here's the maths behind a missed call and what you can do about it today.</p>
+          <div class="post-card-meta">
+            <span>22 April 2026 · 5 min read</span>
+            <span class="post-card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 AlwaysOn Booking · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-service.html">Terms</a> · <a href="tel:07578410050">07578 410050</a></p>
+  </footer>
+
+</body>
+</html>
